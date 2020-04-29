@@ -308,6 +308,7 @@ void AriacSensorManager::BuildProductFrames(int camera_id){
         }
         cam_1_ = true;
         init1_=true;
+        camera1_frame_counter_ = 1;
     }
     else if (camera_id == 2 and current_parts_2_.models.size() != 0) {
         for (auto& msg : current_parts_2_.models) {
@@ -322,6 +323,7 @@ void AriacSensorManager::BuildProductFrames(int camera_id){
         }
         cam_2_ = true;
         init2_=true;
+        camera2_frame_counter_ = 1;
     }
     else if (camera_id == 3 and current_parts_3_.models.size() != 0) {
         for (auto& msg : current_parts_3_.models) {
@@ -336,6 +338,7 @@ void AriacSensorManager::BuildProductFrames(int camera_id){
         }
         cam_3_ = true;
         init3_=true;
+        camera3_frame_counter_ = 1;
     }
     else if (camera_id == 4 and current_parts_4_.models.size() != 0) {
     for (auto& msg : current_parts_4_.models) {
@@ -350,6 +353,7 @@ void AriacSensorManager::BuildProductFrames(int camera_id){
         }
         cam_4_ = true;
         init4_=true;
+        camera4_frame_counter_ = 1;
     }
     else if (camera_id == 5 and current_parts_5_.models.size() != 0) {
     for (auto& msg : current_parts_5_.models) {
@@ -364,6 +368,7 @@ void AriacSensorManager::BuildProductFrames(int camera_id){
         }
         cam_5_ = true;
         init5_=true;
+        camera5_frame_counter_ = 1;
     }
     else if (camera_id == 6 and current_parts_6_.models.size() != 0) {
     for (auto& msg : current_parts_6_.models) {
@@ -378,6 +383,7 @@ void AriacSensorManager::BuildProductFrames(int camera_id){
         }
         cam_6_ = true;
         init6_=true;
+        camera6_frame_counter_ = 1;
     }
     else if (camera_id == 7 and current_parts_7_.models.size() != 0) {
     for (auto& msg : current_parts_7_.models) {
@@ -392,6 +398,7 @@ void AriacSensorManager::BuildProductFrames(int camera_id){
         }
         cam_7_ = true;
         init7_=true;
+        camera7_frame_counter_ = 1;
     }
     // if (cam_1_ || cam_2_ || cam_3_) {
     //     init_ = true;
@@ -402,6 +409,7 @@ void AriacSensorManager::BuildProductFrames(int camera_id){
 geometry_msgs::Pose AriacSensorManager::GetPartPose(const std::string& src_frame,
                                         const std::string& target_frame) {
     geometry_msgs::Pose part_pose;
+
 
     ROS_INFO_STREAM("Getting part pose...");
 
